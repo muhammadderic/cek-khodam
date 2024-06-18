@@ -9,7 +9,7 @@ function App() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const khodam = generateResult(name);
-    setResult(`Khodam Anda adalah ${khodam}`);
+    setResult(khodam);
   };
 
   return (
@@ -32,7 +32,8 @@ function App() {
             Submit
           </button>
         </form>
-        {result && <p className="mt-6 text-center text-lg">{result}</p>}
+        <p className="mt-8 text-center text-lg">Khodam Anda adalah:</p>
+        {result && <p className="mt-2 text-center font-bold text-3xl text-red-500">{result}</p>}
       </div>
     </div>
   );
