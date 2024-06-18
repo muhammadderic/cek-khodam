@@ -10,8 +10,9 @@ const generateResult = (name: string): string => {
     sum += nameLower.charCodeAt(i);
   }
 
-  const randomFactor = Math.floor(Math.random() * 100);
-  const result = ((sum + randomFactor) % 100) + 1;
+  // const randomFactor = Math.floor(Math.random() * 100);
+  // const result = ((sum + randomFactor) % 100) + 1;
+  const result = (sum % 100) + 1;
 
   return khodamNames[result];
 };

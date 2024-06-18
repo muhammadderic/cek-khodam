@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import Footer from "./components/Footer";
 import generateResult from "./services/generateResult";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <p className="mt-8 text-center text-lg">Khodam Anda adalah:</p>
         {result && <p className="mt-2 text-center font-bold text-3xl text-red-500">{result}</p>}
       </div>
+      <Footer />
     </div>
   );
 }
