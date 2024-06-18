@@ -1,30 +1,19 @@
+import { khodamNames } from "../constants/khodamList";
+
 const generateResult = (name: string): string => {
   const nameLower = name.toLowerCase();
-  if (name.length === 4 && nameLower[1] === 'a') {
-    return "kerbau";
+
+  let sum = 0;
+
+  // Menghitung jumlah ASCII dari setiap karakter dalam nama anda
+  for (let i = 0; i < nameLower.length; i++) {
+    sum += nameLower.charCodeAt(i);
   }
-  if (name.length === 7 && nameLower[0] === 'a') {
-    return "batman maling gas lpg";
-  }
-  if (name.length > 5 && nameLower.includes('e')) {
-    return "ular berkepala tiga";
-  }
-  if (name.length < 4 && nameLower.endsWith('i')) {
-    return "harimau putih";
-  }
-  if (name.length === 6 && nameLower[2] === 'o') {
-    return "naga terbang";
-  }
-  if (name.length === 3 && nameLower[0] === 'b') {
-    return "gajah kecil";
-  }
-  if (name.length > 8 && nameLower[4] === 'n') {
-    return "alien dari planet mars";
-  }
-  if (name.length === 5 && nameLower.includes('s')) {
-    return "serigala hitam";
-  }
-  return "makhluk misterius";
+
+  const randomFactor = Math.floor(Math.random() * 100);
+  const result = ((sum + randomFactor) % 100) + 1;
+
+  return khodamNames[result];
 };
 
 export default generateResult;
