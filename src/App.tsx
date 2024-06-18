@@ -16,7 +16,10 @@ function App() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-neutral-800 p-4">
       <div className="bg-white shadow-md rounded-lg p-6 max-w-sm w-full">
-        <h1 className="text-5xl font-bold capitalize mb-4 text-center">cek khodam</h1>
+        <div className="border-2 border-white relative">
+          <h1 className="text-5xl font-bold capitalize mb-4 text-center">cek khodam</h1>
+          <p className="flex justify-end text-xs text-gray-300 absolute bottom-0 right-0">hanya untuk hiburan :)</p>
+        </div>
         <h2 className="text-lg mb-6 text-center tracking-wider">apakah anda memiliki khodam?</h2>
         <form onSubmit={handleSubmit} className="flex flex-col items-center">
           <input
@@ -30,7 +33,7 @@ function App() {
             type="submit"
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
           >
-            Submit
+            Cekidot
           </button>
         </form>
         <p className="mt-8 text-center text-lg">Khodam Anda adalah:</p>
