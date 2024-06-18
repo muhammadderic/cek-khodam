@@ -1,12 +1,15 @@
 import { useState } from "react";
 
+import generateResult from "./services/generateResult";
+
 function App() {
   const [name, setName] = useState<string>('');
   const [result, setResult] = useState<string>('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setResult(`Khodam Anda adalah ${name}`);
+    const khodam = generateResult(name);
+    setResult(`Khodam Anda adalah ${khodam}`);
   };
 
   return (
