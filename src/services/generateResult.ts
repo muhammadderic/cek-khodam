@@ -3,6 +3,10 @@ import { khodamNames } from "../constants/khodamList";
 const generateResult = (name: string): string => {
   const nameLower = name.toLowerCase();
 
+  if (name === "") {
+    return name;
+  }
+
   let sum = 0;
 
   // Menghitung jumlah ASCII dari setiap karakter dalam nama anda

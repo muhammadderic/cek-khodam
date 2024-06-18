@@ -4,14 +4,18 @@ import Footer from "./components/Footer";
 import generateResult from "./services/generateResult";
 
 function App() {
-  const [name, setName] = useState<string>('');
-  const [result, setResult] = useState<string>('');
+  const [name, setName] = useState<string>("");
+  const [result, setResult] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const khodam = generateResult(name);
     setResult(khodam);
   };
+
+  const resetHandler = () => {
+    setResult("");
+  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-neutral-800 p-4">
@@ -27,14 +31,23 @@ function App() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Masukkan nama Anda"
+            required
             className="mb-4 p-2 border border-gray-300 rounded w-full"
           />
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-          >
-            Cekidot
-          </button>
+          <div className="flex gap-4">
+            <button
+              type="submit"
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+            >
+              Cekidot
+            </button>
+            <p
+              onClick={() => resetHandler()}
+              className="text-blue border-2 px-4 py-2 rounded hover:text-blue-700 transition"
+            >
+              Reset
+            </p>
+          </div>
         </form>
         <p className="mt-8 text-center text-lg">Khodam Anda adalah:</p>
         {result && <p className="mt-2 text-center font-bold text-3xl text-red-500">{result}</p>}
