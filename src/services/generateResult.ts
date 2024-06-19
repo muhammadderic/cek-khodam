@@ -16,7 +16,7 @@ const generateResult = (name: string): string => {
 
   // const randomFactor = Math.floor(Math.random() * 100);
   // const result = ((sum + randomFactor) % 100) + 1;
-  const result = (sum % 100) + 1;
+  const result = (sum % 300) + 1;
 
   return khodamNames[result];
 };
